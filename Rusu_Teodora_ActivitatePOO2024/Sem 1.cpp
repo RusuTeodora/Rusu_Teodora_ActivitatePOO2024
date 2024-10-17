@@ -48,7 +48,7 @@
 //	cout << "Nume ciocolata:" << c1.nume << endl;
 //	cout << "Pret:" << c1.pret << endl;
 //	cout << "Gramaj:" << c1.gramaj << endl;
-//	cout << "Este amaruie:" << c1.esteAmaruie << endl;
+//	cout << "Este amaruie :" << c1.esteAmaruie << endl;
 //	afisareCiocolata(c1);*/
 //	Ciocolata c1;
 //	c1 = initializareCiocolata(50, 7, "Milka", 0);
