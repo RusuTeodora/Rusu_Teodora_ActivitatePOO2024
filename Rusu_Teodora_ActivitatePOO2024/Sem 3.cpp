@@ -1,4 +1,4 @@
-#include<iostream>
+/*#include<iostream>
 
 using namespace std;
 class Cofetarie {
@@ -90,4 +90,4 @@ int main() {
 	delete[]vector;
 	return 0;
 
-}
+}*/

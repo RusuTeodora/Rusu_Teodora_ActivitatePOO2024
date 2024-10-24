@@ -24,5 +24,8 @@
     <ClCompile Include="Sem 3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sem 4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
