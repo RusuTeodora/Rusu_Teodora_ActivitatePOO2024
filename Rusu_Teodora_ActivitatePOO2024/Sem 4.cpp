@@ -1,8 +1,10 @@
 #include<iostream>
 
 using namespace std;
+
 class Cofetarie {
-public:
+private:
+
 	string nume;//
 	int nrAngajati;//
 	float* salarii;
@@ -15,6 +17,8 @@ public:
 
 	//construct se pune la public pt a fi accesat din afara 
 	// atributele la private
+
+public:
 
 	Cofetarie() :adaos(30), anDeschidere(2024) {
 		this->nume = "Delice";
@@ -158,4 +162,6 @@ int main() {
 	Cofetarie c4 = c2;
 	
 }
+
+
 	
