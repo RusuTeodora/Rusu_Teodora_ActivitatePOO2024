@@ -131,6 +131,8 @@
     <ClCompile Include="Sem 2.cpp" />
     <ClCompile Include="Sem 3.cpp" />
     <ClCompile Include="Sem 4.cpp" />
+    <ClCompile Include="Sem 6.cpp" />
+    <ClCompile Include="Seminar 5.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

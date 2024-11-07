@@ -1,4 +1,4 @@
-#include<iostream>
+/*#include<iostream>
 
 using namespace std;
 
@@ -130,7 +130,7 @@ public:
 	}
 };
 
-// constructorul creeaza un un obiect o singura data
+// constructorul creeaza un obiect o singura data
 //staticul nu depinde de obiect; nu mai primeste this
 
 int Cofetarie::TVA = 9;
@@ -161,7 +161,7 @@ int main() {
 	Cofetarie c3(c2);//copiez c3 pe baza lui c2
 	Cofetarie c4 = c2;
 	
-}
+}*/
 
 
 	
