@@ -158,6 +158,19 @@ public:
 		cout << "Adaos:" << this->adaos << endl;
 		cout << "TVA:" << Cofetarie::TVA << endl;
 	}
+
+	operator int() {
+		return this->nrAngajati;
+	}
+
+	explicit operator float() {
+		float s = 0;
+		for (int i=0; i<this->nrAngajati; i++) {
+			s += this->salarii[i];
+		}
+		return s;
+	}
+
 	static void modificaTVA(int noulTVA) {
 		if (noulTVA > 0) {
 			Cofetarie::TVA = noulTVA;
@@ -201,6 +214,22 @@ public:
 		return input;
 	}
 	//& se pune mereu pt >>
+
+	bool operator<<(Cofetarie c) {
+		return this->nrAngajati < c.nrAngajati;
+	}
+
+	float& operator[](int index) {
+		if (index >= 0 && this->nrAngajati) {
+			return this->salarii[index];
+		}
+		else {
+			throw "Indexul este in afara limitelor";
+			//throw
+			//try
+			//catch
+		}
+	}
 };
 int Cofetarie::TVA = 9;
 
@@ -236,12 +265,47 @@ int main() {
 	cin >> c2;
 	cout << endl << c2 << endl;
 
-	Cofetarie c3 = c2;
+
+
+	/*Cofetarie c3 = c2;
 	Cofetarie c4 = c2 + 20;
 	c4.afisare();
 
 	c4 += c2;
-	c4.afisare();
+	c4.afisare();*/
 
+	int nrAngajati = (int)c2;
+	float salariiTotale =(float) c2;
+
+	if (c < c2) {
+		//c1.operator<(c1)
+		cout << "c1 este mai mic decat c2";
+	}
+
+	try {
+		cout << c2[1]<<endl;
+		cout << c2[-6];
+		cout << c2[1];
+	}
+	catch (int exceptie) {
+
+	}
+
+	catch (float exceptie) {
+
+		
+	}
+
+	catch (const char* exceptie) {
+		cout << endl << exceptie << endl;
+	}
+
+	catch (...) {
+
+	}
+
+	cout << c2[1] << endl;
+	c2[1] = 2000;
+	cout << c2[1] << endl;
 	
 }
