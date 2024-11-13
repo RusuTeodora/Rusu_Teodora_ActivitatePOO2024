@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Recapitulare test.cpp" />
     <ClCompile Include="Sem 1.cpp" />
     <ClCompile Include="Sem 2.cpp" />
     <ClCompile Include="Sem 3.cpp" />

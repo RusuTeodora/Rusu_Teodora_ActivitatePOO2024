@@ -31,6 +31,7 @@ public:
 		}
 	}
 
+	//Constructorul de copiere
 	Cofetarie(const Cofetarie& c) :anDeschidere(c.anDeschidere) {
 		this->nume = c.nume;
 		this->nrAngajati = c.nrAngajati;
@@ -103,6 +104,8 @@ public:
 	Cofetarie operator+(Cofetarie c)const {
 		Cofetarie temp = *this;
 		temp.nrAngajati = this->nrAngajati + c.nrAngajati;
+
+		// 
 		float* aux = new float[temp.nrAngajati];
 		for (int i = 0; i < this->nrAngajati; i++) {
 			aux[i] = this->salarii[i];
@@ -117,7 +120,7 @@ public:
 		return temp;
 	}
 
-	Cofetarie& operator+=(Cofetarie c) {
+	Cofetarie& operator+=(Cofetarie& c) {
 		*this = *this + c;
 		return *this;
 	}
@@ -131,7 +134,7 @@ public:
 		for (int i = 0; i < this->nrAngajati; i++) {
 			temp.salarii[i] = this->salarii[i];
 		}
-		temp.salarii[temp.nrAngajati]=salariu;
+		temp.salarii[temp.nrAngajati] = salariu;
 		temp.nrAngajati++;
 		return temp;
 	}
@@ -165,7 +168,7 @@ public:
 
 	explicit operator float() {
 		float s = 0;
-		for (int i=0; i<this->nrAngajati; i++) {
+		for (int i = 0; i < this->nrAngajati; i++) {
 			s += this->salarii[i];
 		}
 		return s;
@@ -184,8 +187,8 @@ public:
 		return suma;
 	}
 
-	// metoda etse o punctie care are ca prim 
-	// parametru this=adresa obiectului curent
+	// metoda etse o functie care are ca prim 
+	// parametru this(=adresa obiectului curent)
 
 	friend ostream& operator<<(ostream& output, Cofetarie c);
 
@@ -260,7 +263,7 @@ int main() {
 	c.setNrAngajati(4, new float[4] {2, 6, 4, 9});
 
 	Cofetarie c2("Minimal", 3, false, 2020, 10);
-	
+
 	cout << c2;
 	cin >> c2;
 	cout << endl << c2 << endl;
@@ -275,7 +278,7 @@ int main() {
 	c4.afisare();*/
 
 	int nrAngajati = (int)c2;
-	float salariiTotale =(float) c2;
+	float salariiTotale = (float)c2;
 
 	if (c < c2) {
 		//c1.operator<(c1)
@@ -283,7 +286,7 @@ int main() {
 	}
 
 	try {
-		cout << c2[1]<<endl;
+		cout << c2[1] << endl;
 		cout << c2[-6];
 		cout << c2[1];
 	}
@@ -293,7 +296,7 @@ int main() {
 
 	catch (float exceptie) {
 
-		
+
 	}
 
 	catch (const char* exceptie) {
@@ -307,5 +310,6 @@ int main() {
 	cout << c2[1] << endl;
 	c2[1] = 2000;
 	cout << c2[1] << endl;
-	
+
 }
+
