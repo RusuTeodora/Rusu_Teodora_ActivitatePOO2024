@@ -335,30 +335,7 @@
 //
 //
 //int main() {
-//	CofetarieOnline co1;
-//	cout << co1.getNume();
-//
-//	Cofetarie c1;
-//	cout << c1.getNume();
-//
-//	float* vector = new float[3] {2,4,7};//initializare inline a  vectorului si alocare de spatiu
-//	CofetarieOnline co2("cofetarie.ro",4,"Cofetarie",3,vector,1,2020,10);
-//
-//	CofetarieOnline co3(co2);//apel construcrtor de copiere
-//	CofetarieOnline co5 = co2;//acelasi lucru
-//
-//	CofetarieOnline co4;
-//	co4 = co3;
-//	cout << co2;
-//	cout << co1;
-//
-//	int nrColaboratori = (int)co2;
-//	cout << endl << "Nr colaboratori:" << nrColaboratori << endl;
-//
-//	cout << "Nr mediu de angajati pt fiecare colaboratori:" << co2.getNrMediuAngajatiPerColaborator() << endl;
 //	
-//
-//	delete vector;
 //
 //	return 0;
 //}

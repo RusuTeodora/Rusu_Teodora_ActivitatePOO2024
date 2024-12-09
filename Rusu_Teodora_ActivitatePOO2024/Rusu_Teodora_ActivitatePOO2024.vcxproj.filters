@@ -42,5 +42,11 @@
     <ClCompile Include="Seminar 9.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sem 10.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Task 1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
