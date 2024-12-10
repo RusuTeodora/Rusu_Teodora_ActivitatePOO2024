@@ -48,5 +48,11 @@
     <ClCompile Include="Task 1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Task 2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sem 11.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
