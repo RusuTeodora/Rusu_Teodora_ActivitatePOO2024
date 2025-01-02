@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Recapitulare test.cpp" />
+    <ClCompile Include="Sejur.cpp" />
     <ClCompile Include="Sem 1.cpp" />
     <ClCompile Include="Sem 10.cpp" />
     <ClCompile Include="Sem 11.cpp" />
@@ -142,6 +143,7 @@
     <ClCompile Include="Task 1.cpp" />
     <ClCompile Include="Task 2.cpp" />
     <ClCompile Include="Task 3.cpp" />
+    <ClCompile Include="Task 4.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
