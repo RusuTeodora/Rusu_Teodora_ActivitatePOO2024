@@ -1,4 +1,5 @@
 //#include<iostream>
+//#include<fstream>
 //
 //using namespace std;
 //
@@ -185,6 +186,22 @@
 //
 //	friend ostream& operator<<(ostream& output, Cofetarie c);
 //
+//	friend ofstream& operator<<(ofstream& output, Cofetarie c) {
+//		output << c.nume << endl;
+//		output << c.nrAngajati << endl;
+//		if (c.salarii != NULL) {
+//			for (int i = 0; i < c.nrAngajati; i++) {
+//				output << c.salarii[i] << " ";
+//			}
+//			output << endl;
+//		}
+//		output << c.esteVegana << endl;
+//		output << c.anDeschidere << endl;
+//		output << c.adaos << endl;
+//
+//		return output;
+//	}
+//
 //	friend istream& operator>>(istream& input, Cofetarie& c) {
 //		cout << "Nume:";
 //		input >> c.nume;
@@ -210,6 +227,37 @@
 //		return input;
 //	}
 //
+//	friend ifstream& operator>>(ifstream& input, Cofetarie& c) {
+//
+//		input >> c.nume;
+//
+//		input >> c.nrAngajati;
+//		if (c.salarii != NULL) {
+//			delete[]c.salarii;
+//		}
+//		if (c.nrAngajati > 0) {
+//			c.salarii = new float[c.nrAngajati];
+//			for (int i = 0; i < c.nrAngajati; i++) {
+//
+//				input >> c.salarii[i];
+//			}
+//		}
+//		else {
+//			c.salarii = NULL;
+//		}
+//
+//		input >> c.esteVegana;
+//
+//		int x = 10;
+//
+//		input >> x;
+//
+//		input >> c.adaos;
+//		return input;
+//	}
+//
+//
+//
 //	bool operator<(Cofetarie c) {
 //		return this->nrAngajati < c.nrAngajati;
 //	}
@@ -223,6 +271,8 @@
 //		}
 //	}
 //
+//
+//
 //};
 //int Cofetarie::TVA = 9;
 //
@@ -231,9 +281,9 @@
 //	output << "Nr angajati:" << c.nrAngajati << endl;
 //	if (c.salarii != NULL) {
 //		for (int i = 0; i < c.nrAngajati; i++) {
-//			cout << c.salarii[i] << ", ";
+//			output << c.salarii[i] << ", ";
 //		}
-//		cout << endl;
+//		output << endl;
 //	}
 //	output << "Are produse vegane:" << (c.esteVegana ? "DA" : "NU") << endl;
 //	output << "An deschidere:" << c.anDeschidere << endl;
@@ -247,95 +297,87 @@
 //	int nrColaboratori;
 //
 //public:
-//
-//	CofetarieOnline():Cofetarie() { // apelam constructorul din clasa parinte
+//	CofetarieOnline() :Cofetarie() {
 //		this->site = NULL;
 //		this->nrColaboratori = 0;
-//
 //	}
 //
-//	CofetarieOnline(const char* site, int nrColaboratori,string nume, int nrAngajati,float*salarii, bool estevegana, int an, float adaos) : Cofetarie(nume,nrAngajati,estevegana,an,adaos){
-//		//
+//
+//	CofetarieOnline(const char* site, int nrColaboratori, string nume, int nrAngajati, float* salarii, bool esteVegana, const int anDeschidere, float adaos) :Cofetarie(nume, nrAngajati, esteVegana, anDeschidere, adaos) {
 //		this->site = new char[strlen(site) + 1];
-//		strcpy_s(this->site, strlen(site) + 1, site);//copiem din atributul site in parametrul site
+//		strcpy_s(this->site, strlen(site) + 1, site);
 //		this->nrColaboratori = nrColaboratori;
-//		this->setNrAngajati(nrAngajati, salarii);//apelam setarul ca sa ne seteze si vectorul salarii
+//		this->setNrAngajati(nrAngajati, salarii);
 //
 //	}
-//
-//	~CofetarieOnline() {
-//		if (this->site != NULL) {
-//			delete[]this->site;
-//		}
+//	CofetarieOnline(CofetarieOnline& co) : Cofetarie(co) {
+//		this->site = new char[strlen(co.site) + 1];
+//		strcpy_s(this->site, strlen(co.site) + 1, co.site);
+//		this->nrColaboratori = co.nrColaboratori;
 //	}
-//
-//	// CONSTRUCTORUL DE COPIERE
-//
-//	CofetarieOnline(CofetarieOnline& co) :Cofetarie(co) {
-//		if (co.site) {
-//			this->site = new char[strlen(co.site) + 1];
-//			strcpy_s(this->site, strlen(co.site) + 1, co.site);
-//		}
-//		else {
-//			this->site = NULL;
-//		}
-//		this->nrColaboratori = nrColaboratori;
-//		
-//	}
-//
-//	//OPERATORUL =
-//
 //	CofetarieOnline operator=(const CofetarieOnline& co) {
 //		if (this != &co) {
-//
-//			//trebuie sa apleam op = din clasa Cofetarie
-//
 //			Cofetarie::operator=(co);
-//
-//			if (this->site != NULL) {
-//				delete[]this->site;
+//			if (this->site != NULL)
+//			{
+//				delete[] this->site;
 //			}
-//
 //			this->site = new char[strlen(co.site) + 1];
 //			strcpy_s(this->site, strlen(co.site) + 1, co.site);
-//			this->nrColaboratori = nrColaboratori;
-//
+//			this->nrColaboratori = co.nrColaboratori;
 //		}
 //		return *this;
-//		
-//		
 //	}
-//
-//	//OPERATOR <<
-//
-//	friend ostream& operator<<(ostream& output, CofetarieOnline co);
-//
+//	~CofetarieOnline() {
+//		if (this->site != NULL)
+//		{
+//			delete[] this->site;
+//		}
+//	}
 //	explicit operator int() {
 //		return this->nrColaboratori;
 //	}
 //
 //	float getNrMediuAngajatiPerColaborator() {
-//		return this->getNrAngajati() / (float) this->nrColaboratori;
+//		return this->getNrAngajati() / (float)this->nrColaboratori;
 //	}
-//		
 //
-//
+//	friend ostream& operator<<(ostream& out, const CofetarieOnline& co);
 //};
-//
-//ostream& operator<<(ostream& output, CofetarieOnline co) {
-//	output << Cofetarie(co);
-//	output << "Siteul cofetariei:" << endl;
-//	if(co.site)
-//	output << co.site;
-//	output << "NR colaboratori:" << endl;
-//	output << co.nrColaboratori;
-//	output << endl;
-//	return output;
+//ostream& operator<<(ostream& out, const CofetarieOnline& co) {
+//	out << (Cofetarie)co;
+//	out << "Site-ul Cofetariei: ";
+//	out << co.site;
+//	out << endl;
+//	out << "Nr. Colaboratori: ";
+//	out << co.nrColaboratori;
+//	out << endl;
+//	return out;
 //}
 //
 //
 //int main() {
-//	
+//	//ofstream fisier("Fisier.txt", ios::app);//adauga ob c1 langa celalalt
+//	////Cofetarie c("AnaPan", 4, 0, 1990, 10);
+//	////float* vector = new float[4] {1000, 2000, 3000, 4000};
+//	////c.setNrAngajati(4, vector);
+//	////fisier << c;//scriere in fisier
 //
-//	return 0;
+//	//Cofetarie c1("Constance", 5, 0, 1980, 16);
+//	//fisier << c1;
+//
+//
+//
+//	//fisier.close();//inchiderea fisierului
+//
+//	ifstream fisier2("Fisier.txt", ios::in);
+//	Cofetarie c3;
+//	fisier2 >> c3;
+//	cout << c3;
+//	fisier2 >> c3;
+//	cout << c3;
+//
+//
+//
+//
 //}
