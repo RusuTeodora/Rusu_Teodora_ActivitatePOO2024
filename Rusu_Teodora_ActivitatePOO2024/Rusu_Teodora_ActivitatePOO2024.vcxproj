@@ -127,6 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Ex 0.cpp" />
+    <ClCompile Include="Ex 1.cpp" />
+    <ClCompile Include="Ex 2.cpp" />
+    <ClCompile Include="Ex 3.cpp" />
+    <ClCompile Include="Ex 4.cpp" />
+    <ClCompile Include="Ex 5.cpp" />
+    <ClCompile Include="Ex 6.cpp" />
+    <ClCompile Include="Ex 7.cpp" />
+    <ClCompile Include="Ex pt test.cpp" />
     <ClCompile Include="Recapitulare test.cpp" />
     <ClCompile Include="Sejur.cpp" />
     <ClCompile Include="Sem 1.cpp" />
